@@ -8,13 +8,13 @@ const ease = [0.22, 1, 0.36, 1] as const
 
 export function HeroSection() {
   return (
-    <section className="relative w-full px-4 pt-6 pb-12 sm:px-6 lg:px-12 lg:pt-10 lg:pb-16 xl:px-24">
+    <section className="relative w-full px-12 pt-6 pb-12 lg:px-24 lg:pt-10 lg:pb-16">
       <div className="flex flex-col items-center text-center">
         <motion.span
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease }}
-          className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-[9px] sm:text-[10px] lg:text-xs tracking-widest uppercase text-muted-foreground font-mono mb-4 max-w-sm sm:max-w-none px-2"
+          className="flex items-center gap-2 text-[10px] lg:text-xs tracking-widest uppercase text-muted-foreground font-mono mb-4"
         >
           <span className="inline-block h-2 w-2 bg-[#ea580c] animate-blink" />
           Works with Claude Code, Cursor, Copilot, Codex, Windsurf &amp; more
@@ -25,7 +25,7 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
           animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           transition={{ duration: 0.7, ease }}
-          className="font-pixel text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-tight text-foreground mb-2 select-none"
+          className="font-pixel text-4xl sm:text-6xl lg:text-7xl xl:text-8xl tracking-tight text-foreground mb-2 select-none"
         >
           PUT YOUR AGENT
         </motion.h1>
@@ -55,7 +55,7 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.45, ease }}
-          className="text-xs sm:text-sm text-muted-foreground max-w-lg mb-2 leading-relaxed font-mono px-2"
+          className="text-xs lg:text-sm text-muted-foreground max-w-lg mb-2 leading-relaxed font-mono"
         >
           Diet Code is lazy senior dev mode for AI coding agents. Claude Code, Cursor, Copilot, and
           Codex climb a ladder before writing anything — then ship the minimum that works.
@@ -99,7 +99,7 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.75, ease }}
-          className="grid grid-cols-1 sm:grid-cols-3 gap-0 border-2 border-foreground mt-10 w-full max-w-2xl"
+          className="grid grid-cols-3 gap-0 border-2 border-foreground mt-10 w-full max-w-2xl"
         >
           {[
             { num: "80–94%", label: "less code written" },
@@ -108,12 +108,12 @@ export function HeroSection() {
           ].map((stat, i) => (
             <div
               key={stat.label}
-              className={`flex flex-col items-center gap-1 py-4 sm:py-5 ${
-                i < 2 ? "border-b-2 sm:border-b-0 sm:border-r-2 border-foreground" : ""
+              className={`flex flex-col items-center gap-1 py-5 ${
+                i < 2 ? "border-r-2 border-foreground" : ""
               }`}
             >
-              <span className="text-lg sm:text-xl lg:text-2xl font-mono font-bold text-[#ea580c]">{stat.num}</span>
-              <span className="text-[9px] sm:text-[10px] tracking-widest uppercase text-muted-foreground font-mono text-center px-3 sm:px-2">
+              <span className="text-xl lg:text-2xl font-mono font-bold text-[#ea580c]">{stat.num}</span>
+              <span className="text-[10px] tracking-widest uppercase text-muted-foreground font-mono text-center px-2">
                 {stat.label}
               </span>
             </div>
