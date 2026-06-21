@@ -14,7 +14,7 @@ const HOSTS = [
   {
     id: "cursor",
     label: "Cursor",
-    lines: ["dietcode init cursor", "# or copy .cursor/rules/dietcode.mdc into your project"],
+    lines: ["dietcode init cursor", "# or copy from github.com/kendrekaran/dietcode"],
   },
   {
     id: "codex",
@@ -106,7 +106,7 @@ export function InstallSection() {
         <div className="px-5 py-3 border-t-2 border-foreground">
           <p className="text-[11px] font-mono text-muted-foreground">
             Prefer one command for everything?{" "}
-            <code className="px-1 border border-border">npm install -g @dietcode/cli</code> then{" "}
+            <code className="px-1 border border-border">npm install -g @diet-code/cli</code> then{" "}
             <code className="px-1 border border-border">dietcode init &lt;host&gt;</code>.
           </p>
         </div>

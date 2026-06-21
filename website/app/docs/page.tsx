@@ -124,7 +124,7 @@ const SECTIONS = [
           <code>codex</code>, <code>copilot</code>, <code>windsurf</code>, <code>cline</code>, or{" "}
           <code>kiro</code>.
         </p>
-        <CodeBlock>{"npm install -g @dietcode/cli\ndietcode init <host>"}</CodeBlock>
+        <CodeBlock>{"npm install -g @diet-code/cli\ndietcode init <host>"}</CodeBlock>
       </>
     ),
   },

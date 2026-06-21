@@ -43,11 +43,11 @@ Point Copilot at this repo's `.github/plugin/` (commands, skills, and `hooks/cop
 
 ### Cursor
 
-Copy `.cursor/rules/dietcode.mdc` into your project's `.cursor/rules/`, or run `dietcode init cursor` (see [CLI](#cli)). The rule is `alwaysApply: true`.
+Copy `.cursor/rules/dietcode.mdc` from [github.com/kendrekaran/dietcode](https://github.com/kendrekaran/dietcode) into your project's `.cursor/rules/`, or run `dietcode init cursor` (see [CLI](#cli)). The rule is `alwaysApply: true`.
 
 ### Windsurf / Cline / Kiro / generic agents
 
-Copy the matching rule file into your project:
+Copy the matching rule file from [github.com/kendrekaran/dietcode](https://github.com/kendrekaran/dietcode) into your project:
 
 - Windsurf → `.windsurf/rules/dietcode.md`
 - Cline → `.clinerules/dietcode.md`
@@ -94,10 +94,10 @@ DietCode is never lazy about: input validation at trust boundaries, error handli
 
 ## CLI
 
-The optional [`@dietcode/cli`](./cli/) automates the manual install steps above and manages modes.
+The optional [`@diet-code/cli`](./cli/) automates the manual install steps above and manages modes.
 
 ```bash
-npm install -g @dietcode/cli
+npm install -g @diet-code/cli
 
 dietcode init cursor      # copy the Cursor rule into this project
 dietcode init agents      # copy AGENTS.md into this project

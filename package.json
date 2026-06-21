@@ -5,6 +5,7 @@
   "keywords": ["ai", "agents", "skills", "dietcode", "lazy", "yagni"],
   "license": "MIT",
   "scripts": {
+    "pretest": "node cli/scripts/bundle-assets.js",
     "test": "node --test tests/*.test.js",
     "check-rules": "node scripts/check-rule-copies.js",
     "build-openclaw": "node scripts/build-openclaw-skills.js"

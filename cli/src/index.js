@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// @dietcode/cli — install rules, switch modes, run diagnostics.
+// @diet-code/cli — install rules, switch modes, run diagnostics.
 const pkg = require('../package.json');
 
 const HELP = `dietcode ${pkg.version} — lazy senior dev mode for AI agents
