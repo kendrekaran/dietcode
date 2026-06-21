@@ -73,12 +73,12 @@ export function InstallSection() {
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true, margin: "-80px" }}
         transition={{ duration: 0.5, ease }}
-        className="flex items-center gap-4 mb-8"
+        className="flex flex-wrap items-center gap-x-4 gap-y-2 mb-8"
       >
-        <span className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground font-mono">
+        <span className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground font-mono shrink-0">
           {"// SECTION: INSTALL"}
         </span>
-        <div className="flex-1 border-t border-border" />
+        <div className="flex-1 min-w-[3rem] border-t border-border" />
       </motion.div>
 
       <motion.div
@@ -107,12 +107,12 @@ export function InstallSection() {
         transition={{ duration: 0.6, delay: 0.1, ease }}
         className="border-2 border-foreground"
       >
-        <div className="flex flex-wrap border-b-2 border-foreground">
+        <div className="flex overflow-x-auto border-b-2 border-foreground [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           {HOSTS.map((host) => (
             <button
               key={host.id}
               onClick={() => setActive(host.id)}
-              className={`px-4 py-3 text-xs font-mono tracking-wide uppercase border-r-2 border-foreground last:border-r-0 transition-colors duration-150 ${
+              className={`shrink-0 px-3 sm:px-4 py-3 text-[10px] sm:text-xs font-mono tracking-wide uppercase border-r-2 border-foreground last:border-r-0 transition-colors duration-150 ${
                 active === host.id
                   ? "bg-foreground text-background"
                   : "text-muted-foreground hover:text-foreground"
@@ -122,10 +122,10 @@ export function InstallSection() {
             </button>
           ))}
         </div>
-        <div className="bg-foreground p-5">
-          <div className="flex flex-col gap-1">
+        <div className="bg-foreground p-4 sm:p-5 overflow-x-auto">
+          <div className="flex flex-col gap-1 min-w-0">
             {activeHost.lines.map((line, i) => (
-              <span key={i} className="text-xs font-mono text-background leading-relaxed">
+              <span key={i} className="text-[10px] sm:text-xs font-mono text-background leading-relaxed whitespace-pre-wrap break-all sm:break-normal">
                 {line.startsWith("#") ? <span className="text-background/40">{line}</span> : line}
               </span>
             ))}

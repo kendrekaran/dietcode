@@ -69,7 +69,7 @@ function CodePanel() {
           LIVE
         </span>
       </div>
-      <div className="flex-1 flex flex-col justify-center gap-6 px-5 py-8 font-mono text-xs leading-relaxed">
+      <div className="flex-1 flex flex-col justify-center gap-6 px-5 py-8 font-mono text-xs leading-relaxed overflow-x-auto">
         <div>
           <div className="text-background/40 mb-2">{"// without dietcode"}</div>
           <div className="text-background/70">npm install lodash</div>
@@ -103,14 +103,14 @@ export function AboutSection() {
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true, margin: "-80px" }}
         transition={{ duration: 0.5, ease }}
-        className="flex items-center gap-4 mb-8"
+        className="flex flex-wrap items-center gap-x-4 gap-y-2 mb-8"
       >
-        <span className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground font-mono">
+        <span className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground font-mono shrink-0">
           {"// SECTION: HOW_IT_WORKS"}
         </span>
-        <div className="flex-1 border-t border-border" />
+        <div className="flex-1 min-w-[3rem] border-t border-border" />
         <BlinkDot />
-        <span className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground font-mono">
+        <span className="hidden sm:inline text-[10px] tracking-[0.2em] uppercase text-muted-foreground font-mono shrink-0">
           005
         </span>
       </motion.div>
@@ -137,11 +137,11 @@ export function AboutSection() {
           className="flex flex-col w-full lg:w-1/2"
         >
           {/* Header bar */}
-          <div className="flex items-center justify-between px-5 py-3 border-b-2 border-foreground">
+          <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between px-4 sm:px-5 py-3 border-b-2 border-foreground">
             <span className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground font-mono">
               LADDER.md
             </span>
-            <span className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground font-mono">
+            <span className="text-[9px] sm:text-[10px] tracking-[0.15em] sm:tracking-[0.2em] uppercase text-muted-foreground font-mono">
               stop at first rung that holds
             </span>
           </div>

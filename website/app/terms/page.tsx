@@ -126,7 +126,7 @@ const SECTIONS = [
 
 export default function TermsPage() {
   return (
-    <div className="min-h-screen dot-grid-bg">
+    <div className="min-h-screen dot-grid-bg overflow-x-hidden">
       <Navbar />
       <main>
         <LegalContent title="Terms and Conditions" updated="20 June 2026" sections={SECTIONS} />

@@ -47,8 +47,7 @@ function ScrambleNumber({ target, label, delay = 0 }: ScrambleNumberProps) {
 
   return (
     <div className="flex flex-col gap-1">
-      <span
-        className="text-4xl lg:text-5xl font-mono font-bold tracking-tight text-foreground"
+      <span className="text-3xl sm:text-4xl lg:text-5xl font-mono font-bold tracking-tight text-foreground"
         style={{ fontVariantNumeric: "tabular-nums" }}
       >
         {display}
@@ -69,7 +68,7 @@ export function MetricsCard() {
         </span>
         <span className="inline-block h-2 w-2 bg-[#ea580c]" />
       </div>
-      <div className="flex-1 grid grid-cols-2 content-center justify-center gap-x-10 gap-y-8 p-6">
+      <div className="flex-1 grid grid-cols-2 content-center justify-center gap-x-4 gap-y-6 sm:gap-x-10 sm:gap-y-8 p-4 sm:p-6">
         <ScrambleNumber target="80–94%" label="Less code, single-shot" delay={500} />
         <ScrambleNumber target="47–77%" label="Lower token cost" delay={800} />
         <ScrambleNumber target="3–6x" label="Faster to completion" delay={1100} />

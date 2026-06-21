@@ -42,13 +42,13 @@ export function GlitchMarquee() {
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true, margin: "-80px" }}
         transition={{ duration: 0.5, ease }}
-        className="flex items-center gap-4 mb-8"
+        className="flex flex-wrap items-center gap-x-4 gap-y-2 mb-8"
       >
-        <span className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground">
+        <span className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground shrink-0">
           {"// SUPPORTED: AGENT_HOSTS"}
         </span>
-        <div className="flex-1 border-t border-border" />
-        <span className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground">008</span>
+        <div className="flex-1 min-w-[3rem] border-t border-border" />
+        <span className="hidden sm:inline text-[10px] tracking-[0.2em] uppercase text-muted-foreground shrink-0">008</span>
       </motion.div>
 
       {/* Marquee */}

@@ -36,12 +36,12 @@ export function FaqSection() {
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true, margin: "-80px" }}
         transition={{ duration: 0.5, ease }}
-        className="flex items-center gap-4 mb-8"
+        className="flex flex-wrap items-center gap-x-4 gap-y-2 mb-8"
       >
-        <span className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground font-mono">
+        <span className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground font-mono shrink-0">
           {"// SECTION: FAQ"}
         </span>
-        <div className="flex-1 border-t border-border" />
+        <div className="flex-1 min-w-[3rem] border-t border-border" />
       </motion.div>
 
       <motion.h2
@@ -68,7 +68,7 @@ export function FaqSection() {
               value={`item-${i}`}
               className={`border-foreground px-5 ${i < FAQS.length - 1 ? "border-b-2" : ""}`}
             >
-              <AccordionTrigger className="text-xs lg:text-sm font-mono font-bold uppercase tracking-wide hover:no-underline">
+              <AccordionTrigger className="text-left text-xs lg:text-sm font-mono font-bold uppercase tracking-wide hover:no-underline py-4">
                 {faq.q}
               </AccordionTrigger>
               <AccordionContent className="text-xs font-mono text-muted-foreground leading-relaxed">

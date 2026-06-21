@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function RefundPage() {
   return (
-    <div className="min-h-screen dot-grid-bg">
+    <div className="min-h-screen dot-grid-bg overflow-x-hidden">
       <Navbar />
       <main>
         <ComingSoon

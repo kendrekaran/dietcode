@@ -5,6 +5,7 @@ import { useEffect, useState } from "react"
 
 const LEFT_LABELS = ["YAGNI", "Stdlib", "Native"]
 const RIGHT_LABELS = ["Deps", "One line", "Code"]
+const ALL_LABELS = [...LEFT_LABELS, ...RIGHT_LABELS]
 
 function PillLabel({
   label,
@@ -57,7 +58,7 @@ export function WorkflowDiagram() {
   }, [])
 
   if (!mounted) {
-    return <div className="h-[200px] w-full" />
+    return <div className="h-[200px] w-full md:h-[200px]" />
   }
 
   const centerX = 400
@@ -65,9 +66,30 @@ export function WorkflowDiagram() {
 
   return (
     <div className="relative w-full max-w-[800px] mx-auto">
+      {/* Mobile: vertical ladder */}
+      <div className="flex flex-col items-center gap-2 py-2 md:hidden" role="img" aria-label="The Diet Code ladder: YAGNI, Stdlib, Native, Deps, One line, Code">
+        {ALL_LABELS.map((label, i) => (
+          <motion.div
+            key={label}
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: i * 0.05 }}
+            className="flex flex-col items-center gap-2"
+          >
+            <span className="px-4 py-1.5 border border-foreground rounded-full text-[10px] font-mono tracking-wide uppercase">
+              {label}
+            </span>
+            {i < ALL_LABELS.length - 1 && (
+              <span className="text-muted-foreground text-xs">↓</span>
+            )}
+          </motion.div>
+        ))}
+      </div>
+
+      {/* Desktop: radial diagram */}
       <svg
         viewBox="0 0 800 200"
-        className="w-full h-auto"
+        className="hidden md:block w-full h-auto"
         role="img"
         aria-label="The Diet Code ladder: YAGNI, Stdlib, Native, Deps, One line, Code"
       >

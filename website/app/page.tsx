@@ -11,7 +11,7 @@ import { Footer } from "@/components/footer"
 
 export default function Page() {
   return (
-    <div className="min-h-screen dot-grid-bg">
+    <div className="min-h-screen dot-grid-bg overflow-x-hidden">
       <Navbar />
       <main>
         <HeroSection />

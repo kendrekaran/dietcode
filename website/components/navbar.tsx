@@ -1,5 +1,7 @@
 "use client"
 
+import { useState } from "react"
+import { Menu, X } from "lucide-react"
 import { motion } from "framer-motion"
 import { ThemeToggle } from "@/components/theme-toggle"
 
@@ -11,6 +13,8 @@ const LINKS = [
 ]
 
 export function Navbar() {
+  const [open, setOpen] = useState(false)
+
   return (
     <motion.div
       initial={{ opacity: 0, y: -20 }}
@@ -18,8 +22,8 @@ export function Navbar() {
       transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
       className="w-full px-4 pt-4 lg:px-6 lg:pt-6"
     >
-      <nav className="w-full border border-foreground/20 bg-background/80 backdrop-blur-sm px-6 py-3 lg:px-8">
-        <div className="flex items-center justify-between">
+      <nav className="w-full border border-foreground/20 bg-background/80 backdrop-blur-sm px-4 py-3 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between gap-3">
           {/* Logo */}
           <motion.a
             href="/"
@@ -52,24 +56,55 @@ export function Navbar() {
             ))}
           </div>
 
-          {/* Right side: theme toggle + CTA */}
+          {/* Right side: theme toggle + CTA + mobile menu */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5, duration: 0.4 }}
-            className="flex items-center gap-4"
+            className="flex items-center gap-2 sm:gap-4"
           >
             <ThemeToggle />
             <motion.a
               href="#install"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="bg-foreground text-background px-4 py-2 text-xs font-mono tracking-widest uppercase"
+              className="hidden sm:inline-flex bg-foreground text-background px-3 py-2 text-xs font-mono tracking-widest uppercase sm:px-4"
             >
               Install now
             </motion.a>
+            <button
+              type="button"
+              onClick={() => setOpen((v) => !v)}
+              className="md:hidden flex items-center justify-center w-9 h-9 border border-foreground/30 text-foreground"
+              aria-label={open ? "Close menu" : "Open menu"}
+              aria-expanded={open}
+            >
+              {open ? <X size={16} /> : <Menu size={16} />}
+            </button>
           </motion.div>
         </div>
+
+        {open && (
+          <div className="md:hidden border-t border-foreground/20 mt-3 pt-3 flex flex-col gap-3">
+            {LINKS.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                onClick={() => setOpen(false)}
+                className="text-xs font-mono tracking-widest uppercase text-muted-foreground hover:text-foreground transition-colors duration-200"
+              >
+                {link.label}
+              </a>
+            ))}
+            <a
+              href="#install"
+              onClick={() => setOpen(false)}
+              className="bg-foreground text-background px-4 py-2 text-xs font-mono tracking-widest uppercase text-center"
+            >
+              Install now
+            </a>
+          </div>
+        )}
       </nav>
     </motion.div>
   )

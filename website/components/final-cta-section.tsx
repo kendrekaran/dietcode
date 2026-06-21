@@ -15,7 +15,7 @@ export function FinalCtaSection() {
         transition={{ duration: 0.6, ease }}
         className="flex flex-col items-center gap-4"
       >
-        <h2 className="text-2xl lg:text-3xl font-mono font-bold tracking-tight uppercase">
+        <h2 className="text-xl sm:text-2xl lg:text-3xl font-mono font-bold tracking-tight uppercase text-balance px-2">
           Stop paying your agent to over-build.
         </h2>
         <p className="text-xs lg:text-sm text-muted-foreground font-mono">

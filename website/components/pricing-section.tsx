@@ -206,14 +206,14 @@ export function PricingSection() {
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true, margin: "-80px" }}
         transition={{ duration: 0.5, ease }}
-        className="flex items-center gap-4 mb-8"
+        className="flex flex-wrap items-center gap-x-4 gap-y-2 mb-8"
       >
-        <span className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground font-mono">
+        <span className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground font-mono shrink-0">
           {"// SECTION: MODES"}
         </span>
-        <div className="flex-1 border-t border-border" />
+        <div className="flex-1 min-w-[3rem] border-t border-border" />
         <BlinkDot />
-        <span className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground font-mono">
+        <span className="hidden sm:inline text-[10px] tracking-[0.2em] uppercase text-muted-foreground font-mono shrink-0">
           006
         </span>
       </motion.div>
@@ -250,12 +250,12 @@ export function PricingSection() {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ delay: 0.5, duration: 0.5, ease }}
-        className="flex items-center gap-3 mt-6"
+        className="flex flex-col sm:flex-row sm:items-center gap-3 mt-6"
       >
-        <span className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground font-mono">
+        <span className="text-[10px] tracking-[0.05em] sm:tracking-[0.2em] uppercase text-muted-foreground font-mono leading-relaxed">
           {"* Diet Code is never lazy about validation, error handling, security, or accessibility."}
         </span>
-        <div className="flex-1 border-t border-border" />
+        <div className="hidden sm:block flex-1 border-t border-border" />
       </motion.div>
     </section>
   )

@@ -230,7 +230,7 @@ const SECTIONS = [
 
 export default function DocsPage() {
   return (
-    <div className="min-h-screen dot-grid-bg">
+    <div className="min-h-screen dot-grid-bg overflow-x-hidden">
       <Navbar />
       <main>
         <DocsContent title="Documentation" updated="22 June 2026" sections={SECTIONS} />

@@ -98,7 +98,7 @@ const SECTIONS = [
 
 export default function PrivacyPage() {
   return (
-    <div className="min-h-screen dot-grid-bg">
+    <div className="min-h-screen dot-grid-bg overflow-x-hidden">
       <Navbar />
       <main>
         <LegalContent title="Privacy Policy" updated="20 June 2026" sections={SECTIONS} />

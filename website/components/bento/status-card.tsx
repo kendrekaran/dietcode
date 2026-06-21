@@ -40,17 +40,17 @@ export function StatusCard() {
             key={mode.name}
             className="grid grid-cols-3 gap-2 py-2 border-b border-border last:border-none"
           >
-            <span className="text-xs font-mono text-foreground">{mode.name}</span>
-            <div className="flex items-center gap-2">
+            <span className="text-[10px] sm:text-xs font-mono text-foreground">{mode.name}</span>
+            <div className="flex items-center gap-1.5 sm:gap-2">
               <span
-                className="h-1.5 w-1.5"
+                className="h-1.5 w-1.5 shrink-0"
                 style={{
                   backgroundColor: mode.status === "STANDBY" ? "hsl(var(--muted-foreground))" : "#ea580c",
                 }}
               />
-              <span className="text-xs font-mono text-muted-foreground">{mode.status}</span>
+              <span className="text-[10px] sm:text-xs font-mono text-muted-foreground">{mode.status}</span>
             </div>
-            <span className="text-xs font-mono text-foreground text-right">{mode.behavior}</span>
+            <span className="text-[10px] sm:text-xs font-mono text-foreground text-right">{mode.behavior}</span>
           </div>
         ))}
         {/* Command hint */}
