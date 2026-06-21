@@ -1,5 +1,6 @@
 node_modules/
 cli/bundled/
+.vercel/
 website/.vercel/
 *.log
 .DS_Store
@@ -8,3 +9,4 @@ website/.vercel/
 __pycache__/
 *.pyc
 *.tsbuildinfo
+.vercel
