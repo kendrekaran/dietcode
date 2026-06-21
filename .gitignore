@@ -1,5 +1,6 @@
 node_modules/
 cli/bundled/
+website/.vercel/
 *.log
 .DS_Store
 .env
