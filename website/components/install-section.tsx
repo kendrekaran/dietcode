@@ -1,6 +1,7 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
+import { Check, Copy } from "lucide-react"
 import { motion } from "framer-motion"
 
 const ease = [0.22, 1, 0.36, 1] as const
@@ -64,7 +65,18 @@ const HOSTS = [
 
 export function InstallSection() {
   const [active, setActive] = useState(HOSTS[0].id)
+  const [copied, setCopied] = useState(false)
   const activeHost = HOSTS.find((h) => h.id === active) ?? HOSTS[0]
+
+  useEffect(() => {
+    setCopied(false)
+  }, [active])
+
+  async function handleCopy() {
+    await navigator.clipboard.writeText(activeHost.lines.join("\n"))
+    setCopied(true)
+    setTimeout(() => setCopied(false), 1500)
+  }
 
   return (
     <section id="install" className="w-full px-6 py-20 lg:px-12">
@@ -122,8 +134,16 @@ export function InstallSection() {
             </button>
           ))}
         </div>
-        <div className="bg-foreground p-4 sm:p-5 overflow-x-auto">
-          <div className="flex flex-col gap-1 min-w-0">
+        <div className="relative bg-foreground p-4 sm:p-5 overflow-x-auto">
+          <button
+            type="button"
+            onClick={handleCopy}
+            aria-label="Copy install commands"
+            className="absolute top-2 right-2 flex items-center justify-center w-7 h-7 border border-background/20 bg-foreground text-background/70 hover:text-background hover:border-background/40 transition-colors duration-150"
+          >
+            {copied ? <Check size={12} strokeWidth={2.5} /> : <Copy size={12} strokeWidth={2} />}
+          </button>
+          <div className="flex flex-col gap-1 min-w-0 pr-8">
             {activeHost.lines.map((line, i) => (
               <span key={i} className="text-[10px] sm:text-xs font-mono text-background leading-relaxed whitespace-pre-wrap break-all sm:break-normal">
                 {line.startsWith("#") ? <span className="text-background/40">{line}</span> : line}
