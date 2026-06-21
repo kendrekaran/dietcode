@@ -1,0 +1,12 @@
+{
+  "name": "dietcode",
+  "version": "0.1.0",
+  "description": "Lazy senior dev mode for AI agents. The best code is the code you never wrote.",
+  "keywords": ["ai", "agents", "skills", "dietcode", "lazy", "yagni"],
+  "license": "MIT",
+  "scripts": {
+    "test": "node --test tests/*.test.js",
+    "check-rules": "node scripts/check-rule-copies.js",
+    "build-openclaw": "node scripts/build-openclaw-skills.js"
+  }
+}

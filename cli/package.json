@@ -1,0 +1,16 @@
+{
+  "name": "@dietcode/cli",
+  "version": "0.1.0",
+  "description": "Install and manage DietCode (lazy senior dev mode) across AI coding agents.",
+  "license": "MIT",
+  "bin": {
+    "dietcode": "src/index.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "files": [
+    "src"
+  ],
+  "keywords": ["dietcode", "ai", "agents", "cli", "yagni"]
+}

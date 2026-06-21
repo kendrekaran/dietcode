@@ -1,0 +1,17 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "dietcode",
+  "description": "Lazy senior dev mode for AI agents. The best code is the code you never wrote.",
+  "owner": {
+    "name": "DietCode",
+    "url": "https://github.com/kendrekaran"
+  },
+  "plugins": [
+    {
+      "name": "dietcode",
+      "description": "Forces the laziest solution that works. YAGNI, stdlib first, one line over fifty.",
+      "source": "./",
+      "category": "productivity"
+    }
+  ]
+}

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DietCode — Lazy senior dev mode for AI coding agents</title>
+<meta name="description" content="DietCode makes Claude Code, Cursor, Copilot, Codex and other AI agents climb a ladder before writing code: YAGNI, stdlib, native, existing deps, one line — only then write the minimum that works. 80–94% less code, 47–77% less cost.">
+<meta name="keywords" content="AI coding agent, Claude Code plugin, Cursor rules, YAGNI, token cost, AI code review, overengineering, AGENTS.md, AI agent skill">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://dietcode.dev/">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%234f46e5'/><text x='16' y='22' font-size='16' font-weight='900' text-anchor='middle' fill='%23ffffff' font-family='Arial'>T</text></svg>">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="DietCode — Lazy senior dev mode for AI coding agents">
+<meta property="og:description" content="The best code is the code your agent never writes. DietCode cuts 80–94% of unnecessary code and 47–77% of token cost across Claude, GPT, and more.">
+<meta property="og:url" content="https://dietcode.dev/">
+<meta property="og:site_name" content="DietCode">
+<meta property="og:image" content="https://dietcode.dev/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="DietCode — Lazy senior dev mode for AI coding agents">
+<meta name="twitter:description" content="Stop your AI agent from over-building. YAGNI, stdlib, native, existing deps, one line — then code. 80–94% less code, 47–77% less cost.">
+<meta name="twitter:image" content="https://dietcode.dev/og-image.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "DietCode",
+  "applicationCategory": "DeveloperApplication",
+  "operatingSystem": "macOS, Linux, Windows",
+  "description": "DietCode is a rule/skill set that makes AI coding agents climb a YAGNI-first ladder before writing code, cutting unnecessary code and token cost.",
+  "offers": [
+    {"@type":"Offer","name":"Free","price":"0","priceCurrency":"USD"},
+    {"@type":"Offer","name":"Pro","price":"12","priceCurrency":"USD"}
+  ],
+  "url": "https://dietcode.dev/"
+}
+</script>
+
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <nav>
+      <a class="brand" href="/"><span class="mark">T</span>DietCode</a>
+      <div class="links">
+        <a href="#how-it-works">How it works</a>
+        <a href="#modes">Modes</a>
+        <a href="#benchmarks">Benchmarks</a>
+        <a href="pricing.html">Pricing</a>
+        <a class="btn btn-primary btn-sm" href="pricing.html">Upgrade to Pro</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" style="border-top:none;">
+  <div class="wrap">
+    <span class="eyebrow"><span class="pulse"></span> Works with Claude Code, Cursor, Copilot, Codex, Windsurf &amp; more</span>
+    <h1>Lazy senior dev mode<br>for <span class="grad">AI coding agents.</span></h1>
+    <p class="lead">DietCode makes your agent climb a ladder before writing anything: does this even need to exist? Does the standard library already do it? Only then write the minimum that works. Less code, less cost, fewer 3am pages.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="pricing.html">See pricing</a>
+      <a class="btn btn-ghost" href="#how-it-works">How it works</a>
+    </div>
+    <div class="fineprint">MIT licensed core · install in under a minute · no telemetry on your code</div>
+
+    <div class="stat-strip">
+      <div class="stat"><div class="num">80–94%</div><div class="label">less code written</div></div>
+      <div class="stat"><div class="num">47–77%</div><div class="label">less token cost</div></div>
+      <div class="stat"><div class="num">3–6×</div><div class="label">faster generations</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="how-it-works">
+  <div class="wrap">
+    <div class="section-head"><h2>Before / after</h2></div>
+    <p class="sub">Real output from a benchmark run, no-skill arm vs DietCode arm. Same prompt, same model.</p>
+
+    <div class="tabs" role="tablist">
+      <button class="active" data-tab="email">Email validation</button>
+      <button data-tab="debounce">Debounce</button>
+      <button data-tab="clone">Deep clone</button>
+    </div>
+
+    <div class="tabpane active" data-pane="email">
+      <div class="grid2">
+        <div class="card">
+          <h3>Without DietCode</h3>
+          <div class="codebox">class EmailValidator {<br>&nbsp;&nbsp;constructor(rules = DEFAULT_RULES) { this.rules = rules; }<br>&nbsp;&nbsp;validate(email) { <span class="muted">/* 30 lines of regex + TLD list + options */</span> }<br>}</div>
+        </div>
+        <div class="card">
+          <h3>With DietCode</h3>
+          <div class="codebox">const isEmail = (s) =&gt; s.includes("@") &amp;&amp; s.includes(".");<br><span class="cm">// dietcode: format check only; the real validation is the confirmation email.</span></div>
+        </div>
+      </div>
+      <p class="sub" style="margin-top:20px;">→ skipped: RFC-5322 regex, TLD list. Add it when you actually parse addresses, not just gate signups.</p>
+    </div>
+
+    <div class="tabpane" data-pane="debounce">
+      <div class="grid2">
+        <div class="card">
+          <h3>Without DietCode — 116 lines</h3>
+          <div class="codebox">function debounce(func, delay, options = {}) {<br>&nbsp;&nbsp;<span class="muted">// reusable utility, "enhanced" version with loading state,</span><br>&nbsp;&nbsp;<span class="muted">// "advanced" version with cancel/immediate, HTML, CSS,</span><br>&nbsp;&nbsp;<span class="muted">// and a benefits comparison table…</span><br>}</div>
+        </div>
+        <div class="card">
+          <h3>With DietCode — 10 lines</h3>
+          <div class="codebox">let t;<br>input.addEventListener('input', (e) =&gt; {<br>&nbsp;&nbsp;clearTimeout(t);<br>&nbsp;&nbsp;t = setTimeout(() =&gt; search(e.target.value), 300);<br>});</div>
+        </div>
+      </div>
+      <p class="sub" style="margin-top:20px;">→ <code class="inline">setTimeout</code> + <code class="inline">clearTimeout</code> <em>is</em> the debounce. Add a reusable utility when it's needed on 3+ inputs.</p>
+    </div>
+
+    <div class="tabpane" data-pane="clone">
+      <div class="grid2">
+        <div class="card">
+          <h3>Without DietCode</h3>
+          <div class="codebox">npm install lodash<br><br>import { cloneDeep } from "lodash";<br>const copy = cloneDeep(original);</div>
+        </div>
+        <div class="card">
+          <h3>With DietCode</h3>
+          <div class="codebox"><span class="cm">// dietcode: structuredClone does this</span><br>const copy = structuredClone(original);</div>
+        </div>
+      </div>
+      <p class="sub" style="margin-top:20px;">→ 1 dependency → 1 built-in. <code class="inline">structuredClone</code> handles Dates, Maps, Sets, and circular refs — everything <code class="inline">JSON.parse/stringify</code> silently drops.</p>
+    </div>
+
+    <h2 style="margin-top:54px;">The ladder</h2>
+    <p class="sub">Stop at the first rung that holds.</p>
+    <div class="grid3">
+      <div class="card"><h3><span class="rung">1</span> Does this need to exist?</h3><p>Speculative need = skip it and say so in one line. (YAGNI)</p></div>
+      <div class="card"><h3><span class="rung">2</span> Stdlib does it?</h3><p>Use it before reaching for anything else.</p></div>
+      <div class="card"><h3><span class="rung">3</span> Native platform feature?</h3><p><code class="inline">&lt;input type="date"&gt;</code> over a picker library, CSS over JS.</p></div>
+      <div class="card"><h3><span class="rung">4</span> Already-installed dependency?</h3><p>Use it. Never add a new one for what a few lines handle.</p></div>
+      <div class="card"><h3><span class="rung">5</span> Can it be one line?</h3><p>One line.</p></div>
+      <div class="card"><h3><span class="rung">6</span> Only then, write code</h3><p>The least code that works — boring over clever.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="install">
+  <div class="wrap">
+    <h2>Install for your agent</h2>
+    <p class="sub">One ruleset, every host. Pick yours.</p>
+    <div class="tabs" role="tablist">
+      <button class="active" data-tab2="claude">Claude Code</button>
+      <button data-tab2="cursor">Cursor</button>
+      <button data-tab2="codex">Codex</button>
+      <button data-tab2="copilot">Copilot CLI</button>
+      <button data-tab2="generic">Windsurf / Cline / Kiro</button>
+    </div>
+    <div class="tabpane active" data-pane2="claude">
+      <div class="codebox">/plugin marketplace add kendrekaran/dietcode<br>/plugin install dietcode</div>
+    </div>
+    <div class="tabpane" data-pane2="cursor">
+      <div class="codebox">dietcode init cursor<br><span class="cm"># or copy .cursor/rules/dietcode.mdc into your project</span></div>
+    </div>
+    <div class="tabpane" data-pane2="codex">
+      <div class="codebox"><span class="cm"># ships .codex-plugin/plugin.json + hooks</span><br>@dietcode, @dietcode-review, @dietcode-help</div>
+    </div>
+    <div class="tabpane" data-pane2="copilot">
+      <div class="codebox"><span class="cm"># point Copilot at this repo's .github/plugin/</span><br><span class="cm"># commands, skills, and hooks/copilot-hooks.json</span></div>
+    </div>
+    <div class="tabpane" data-pane2="generic">
+      <div class="codebox">Windsurf → .windsurf/rules/dietcode.md<br>Cline → .clinerules/dietcode.md<br>Kiro → .kiro/steering/dietcode.md<br>Any AGENTS.md-aware agent → AGENTS.md</div>
+    </div>
+    <p class="sub" style="margin-top:18px;font-size:0.85rem;">Prefer one command for everything? <code class="inline">npm install -g @dietcode/cli</code> then <code class="inline">dietcode init &lt;host&gt;</code>.</p>
+  </div>
+</section>
+
+<section id="modes">
+  <div class="wrap">
+    <h2>Modes</h2>
+    <p class="sub">Switch intensity with <code class="inline">/dietcode lite|full|ultra|off</code>, or just say "stop dietcode" / "normal mode".</p>
+    <table>
+      <thead><tr><th>Mode</th><th>Behavior</th></tr></thead>
+      <tbody>
+        <tr><td><strong>lite</strong></td><td>Build what's asked; name the lazier alternative in one line.</td></tr>
+        <tr><td><strong>full</strong></td><td>The ladder enforced. Stdlib and native first. Default.</td></tr>
+        <tr><td><strong>ultra</strong> <span class="updated" style="margin-left:6px;">Pro</span></td><td>YAGNI extremist. Deletion before addition. Challenges the requirement.</td></tr>
+        <tr><td><strong>off</strong></td><td>Disabled.</td></tr>
+      </tbody>
+    </table>
+    <p class="sub" style="margin-top:18px;">DietCode is never lazy about: input validation at trust boundaries, error handling that prevents data loss, security, accessibility, hardware calibration, and anything you explicitly request.</p>
+  </div>
+</section>
+
+<section id="benchmarks">
+  <div class="wrap">
+    <h2>The numbers</h2>
+    <p class="sub">Two arms (no skill, DietCode), three Claude models, five everyday tasks, 10 runs per cell, median reported.</p>
+    <div class="grid4">
+      <div class="card"><h3>80–94%</h3><p>less code generated, single-shot</p></div>
+      <div class="card"><h3>47–77%</h3><p>lower token cost per task</p></div>
+      <div class="card"><h3>3–6×</h3><p>faster time to completion</p></div>
+      <div class="card"><h3>0</h3><p>new dependencies added for tasks stdlib already covers</p></div>
+    </div>
+    <p class="sub" style="margin-top:22px;font-size:0.85rem;">Read honestly: the single-shot gap is measured against a bare model that answers with options and commentary, so it overstates the real-world win. Our agentic benchmark re-runs the comparison as a real coding session — DietCode cuts most on over-build traps, is a wash on already-minimal code, and never writes more.</p>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <h2>FAQ</h2>
+    <div class="faq">
+      <details>
+        <summary>Does DietCode see my code or prompts?</summary>
+        <p>No. DietCode is a rule/instruction file your AI agent reads locally. We never see, log, or store your source code, prompts, or conversations.</p>
+      </details>
+      <details>
+        <summary>Will it skip validation, error handling, or security?</summary>
+        <p>No. The safety floor is explicit: input validation at trust boundaries, error handling that prevents data loss, security, accessibility, and hardware calibration are never skipped.</p>
+      </details>
+      <details>
+        <summary>Which agents does it support?</summary>
+        <p>Claude Code, Cursor, Codex, Copilot CLI, Windsurf, Cline, Kiro, OpenCode, Gemini, and any AGENTS.md-aware agent.</p>
+      </details>
+      <details>
+        <summary>Is the free tier actually usable, or a teaser?</summary>
+        <p>It's the full ladder behavior via the AGENTS.md rule and Cursor rule, in lite and full modes. Pro adds ultra mode, the plugin bundle for every host from one CLI, and the review skill.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section style="text-align:center;">
+  <div class="wrap">
+    <h2>Stop paying your agent to over-build.</h2>
+    <p class="sub" style="margin:0 auto 26px;">Free in under a minute. Upgrade when you want every host from one CLI.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="pricing.html">See pricing</a>
+      <a class="btn btn-ghost" href="#install">Install now</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <a class="brand" href="/"><span class="mark">T</span>DietCode</a>
+        <p style="color:var(--muted);font-size:0.88rem;max-width:280px;margin-top:12px;">Lazy senior dev mode for AI coding agents. The best code is the code you never wrote.</p>
+      </div>
+      <div>
+        <h4>Product</h4>
+        <ul>
+          <li><a href="#how-it-works">How it works</a></li>
+          <li><a href="#modes">Modes</a></li>
+          <li><a href="#benchmarks">Benchmarks</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Hosts</h4>
+        <ul>
+          <li><a href="#install">Claude Code</a></li>
+          <li><a href="#install">Cursor</a></li>
+          <li><a href="#install">Codex</a></li>
+          <li><a href="#install">Copilot CLI</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms &amp; Conditions</a></li>
+          <li><a href="refund.html">Refund Policy</a></li>
+          <li><a href="mailto:hello@dietcode.dev">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="bottom">
+      <span>© 2026 DietCode. MIT licensed (free tier).</span>
+      <span><a href="mailto:hello@dietcode.dev">hello@dietcode.dev</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function wireTabs(tabAttr, paneAttr){
+    document.querySelectorAll('[data-' + tabAttr + ']').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const group = btn.closest('.tabs');
+        group.querySelectorAll('button').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const target = btn.getAttribute('data-' + tabAttr);
+        const panes = group.nextElementSibling.matches('[data-' + paneAttr + ']') ? null : null;
+        document.querySelectorAll('[data-' + paneAttr + ']').forEach(p => {
+          if (p.closest('section') === group.closest('section')) {
+            p.classList.toggle('active', p.getAttribute('data-' + paneAttr) === target);
+          }
+        });
+      });
+    });
+  }
+  wireTabs('tab', 'pane');
+  wireTabs('tab2', 'pane2');
+</script>
+
+</body>
+</html>

@@ -1,0 +1,10 @@
+{
+  "name": "dietcode",
+  "version": "0.1.0",
+  "description": "Lazy senior dev mode. Forces the simplest, shortest solution that actually works: YAGNI, stdlib first, no unrequested abstractions.",
+  "author": {
+    "name": "DietCode",
+    "url": "https://github.com/kendrekaran"
+  },
+  "hooks": "./hooks/claude-codex-hooks.json"
+}

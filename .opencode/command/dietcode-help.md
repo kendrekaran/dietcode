@@ -1,0 +1,5 @@
+---
+description: Quick reference for dietcode levels, skills, and commands
+---
+
+Show the dietcode quick reference. One shot, change nothing: do not switch mode, write flag files, or persist anything. Levels: /dietcode lite (build what's asked, name the lazier alternative in one line), /dietcode (full, the default ladder: YAGNI then stdlib then native then one line then minimum), /dietcode ultra (deletion before addition, challenges the requirement before building). Commands: /dietcode-review (over-engineering review of the current changes), /dietcode-audit (whole-repo over-engineering audit), /dietcode-debt (harvest dietcode: comments into a tracked ledger), /dietcode-gain (measured-impact scoreboard from the benchmark), /dietcode-help (this card). Deactivate with 'stop dietcode', 'normal mode', or /dietcode off; resume anytime with /dietcode. Default mode is full; change it with the DIETCODE_DEFAULT_MODE environment variable (off|lite|full|ultra) or a config file at ~/.config/dietcode/config.json (Windows: %APPDATA%\dietcode\config.json) with {"defaultMode": "lite"}. Resolution order: env var, then config file, then full.

@@ -1,0 +1,16 @@
+{
+  "name": "dietcode",
+  "description": "Lazy senior dev mode. Forces the simplest, shortest solution that actually works: YAGNI, stdlib first, no unrequested abstractions.",
+  "version": "0.1.0",
+  "author": {
+    "name": "DietCode",
+    "url": "https://github.com/kendrekaran"
+  },
+  "homepage": "https://github.com/kendrekaran/dietcode",
+  "repository": "https://github.com/kendrekaran/dietcode",
+  "license": "MIT",
+  "keywords": ["yagni", "minimalism", "code-review", "productivity"],
+  "commands": "commands/",
+  "skills": "skills/",
+  "hooks": "hooks/copilot-hooks.json"
+}

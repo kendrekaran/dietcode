@@ -1,0 +1,30 @@
+{
+  "name": "dietcode",
+  "version": "0.1.0",
+  "description": "Lazy senior dev mode. Forces the simplest, shortest solution that actually works: YAGNI, stdlib first, no unrequested abstractions.",
+  "author": {
+    "name": "DietCode",
+    "url": "https://github.com/kendrekaran"
+  },
+  "homepage": "https://github.com/kendrekaran/dietcode",
+  "repository": "https://github.com/kendrekaran/dietcode",
+  "license": "MIT",
+  "keywords": ["yagni", "minimalism", "code-review", "productivity"],
+  "skills": "./skills/",
+  "hooks": "./hooks/claude-codex-hooks.json",
+  "interface": {
+    "displayName": "DietCode",
+    "shortDescription": "Lazy senior developer mode",
+    "longDescription": "Prefer YAGNI, the standard library, native platform features, and the smallest correct implementation.",
+    "developerName": "DietCode",
+    "category": "Productivity",
+    "capabilities": ["Instructions", "Lifecycle hooks"],
+    "websiteURL": "https://github.com/kendrekaran/dietcode",
+    "defaultPrompt": [
+      "Use DietCode mode for this task.",
+      "Review this diff for over-engineering.",
+      "Find the smallest correct implementation."
+    ],
+    "brandColor": "#111111"
+  }
+}
