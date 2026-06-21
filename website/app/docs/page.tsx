@@ -65,24 +65,55 @@ const SECTIONS = [
     ),
   },
   {
+    heading: "Installing — npm CLI",
+    body: (
+      <>
+        <p>
+          The fastest path for Cursor, Windsurf, Cline, and AGENTS.md-aware agents. Published on{" "}
+          <a href="https://www.npmjs.com/package/@diet-code/cli">npm as @diet-code/cli</a>.
+        </p>
+        <CodeBlock>
+          {"npm install -g @diet-code/cli\ncd my-project\ndietcode init cursor    # or agents, windsurf, cline\ndietcode init claude    # prints Claude plugin steps\ndietcode doctor         # verify install"}
+        </CodeBlock>
+      </>
+    ),
+  },
+  {
     heading: "Installing — Claude Code",
-    body: <CodeBlock>{"/plugin marketplace add kendrekaran/dietcode\n/plugin install dietcode"}</CodeBlock>,
+    body: (
+      <>
+        <p>
+          Requires the public{" "}
+          <a href="https://github.com/kendrekaran/dietcode">kendrekaran/dietcode</a> repo on GitHub.
+        </p>
+        <CodeBlock>{"/plugin marketplace add kendrekaran/dietcode\n/plugin install dietcode"}</CodeBlock>
+      </>
+    ),
   },
   {
     heading: "Installing — Cursor",
     body: (
-      <CodeBlock>
-        {"dietcode init cursor\n# or copy .cursor/rules/dietcode.mdc into your project"}
-      </CodeBlock>
+      <>
+        <CodeBlock>
+          {"npm install -g @diet-code/cli\ndietcode init cursor"}
+        </CodeBlock>
+        <p className="mt-4">
+          Manual alternative: copy{" "}
+          <code>.cursor/rules/dietcode.mdc</code> from{" "}
+          <a href="https://github.com/kendrekaran/dietcode">github.com/kendrekaran/dietcode</a> into
+          your project.
+        </p>
+      </>
     ),
   },
   {
     heading: "Installing — Codex",
     body: (
       <p>
-        Codex support ships as <code>.codex-plugin/plugin.json</code> plus hooks, exposing the
-        commands <code>@dietcode</code>, <code>@dietcode-review</code>, and{" "}
-        <code>@dietcode-help</code>.
+        Clone{" "}
+        <a href="https://github.com/kendrekaran/dietcode">github.com/kendrekaran/dietcode</a>, add
+        the <code>.codex-plugin/</code> directory as a plugin, then invoke{" "}
+        <code>@dietcode</code>, <code>@dietcode-review</code>, and <code>@dietcode-help</code>.
       </p>
     ),
   },
@@ -90,41 +121,25 @@ const SECTIONS = [
     heading: "Installing — Copilot CLI",
     body: (
       <p>
-        Point Copilot at this repo&apos;s <code>.github/plugin/</code> directory — it ships commands,
-        skills, and <code>hooks/copilot-hooks.json</code>.
+        Clone{" "}
+        <a href="https://github.com/kendrekaran/dietcode">github.com/kendrekaran/dietcode</a> and
+        point Copilot at the <code>.github/plugin/</code> directory — it ships commands, skills,
+        and <code>hooks/copilot-hooks.json</code>.
       </p>
     ),
   },
   {
     heading: "Installing — Windsurf, Cline, Kiro, and AGENTS.md agents",
     body: (
-      <ul>
-        <li>
-          Windsurf → <code>.windsurf/rules/dietcode.md</code>
-        </li>
-        <li>
-          Cline → <code>.clinerules/dietcode.md</code>
-        </li>
-        <li>
-          Kiro → <code>.kiro/steering/dietcode.md</code>
-        </li>
-        <li>
-          Any AGENTS.md-aware agent (OpenCode, Gemini, etc.) → <code>AGENTS.md</code>
-        </li>
-      </ul>
-    ),
-  },
-  {
-    heading: "Installing — via the CLI",
-    body: (
       <>
-        <p>
-          Prefer one command for everything? Install the CLI, then init it for your host, where{" "}
-          <code>&lt;host&gt;</code> is one of <code>claude</code>, <code>cursor</code>,{" "}
-          <code>codex</code>, <code>copilot</code>, <code>windsurf</code>, <code>cline</code>, or{" "}
-          <code>kiro</code>.
+        <CodeBlock>
+          {"npm install -g @diet-code/cli\ndietcode init windsurf   # .windsurf/rules/dietcode.md\ndietcode init cline      # .clinerules/dietcode.md\ndietcode init agents     # AGENTS.md"}
+        </CodeBlock>
+        <p className="mt-4">
+          Kiro: copy <code>.kiro/steering/dietcode.md</code> from{" "}
+          <a href="https://github.com/kendrekaran/dietcode">GitHub</a>. OpenCode and Gemini also
+          read <code>AGENTS.md</code> via <code>dietcode init agents</code>.
         </p>
-        <CodeBlock>{"npm install -g @diet-code/cli\ndietcode init <host>"}</CodeBlock>
       </>
     ),
   },
@@ -179,6 +194,12 @@ const SECTIONS = [
     heading: "FAQ",
     body: (
       <>
+        <p>
+          <strong>How do I install it?</strong> Run{" "}
+          <code>npm install -g @diet-code/cli</code>, then <code>dietcode init &lt;host&gt;</code>.
+          Package:{" "}
+          <a href="https://www.npmjs.com/package/@diet-code/cli">@diet-code/cli on npm</a>.
+        </p>
         <p>
           <strong>Does Diet Code see my code or prompts?</strong> No — see Privacy above.
         </p>

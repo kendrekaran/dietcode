@@ -7,6 +7,10 @@ const ease = [0.22, 1, 0.36, 1] as const
 
 const FAQS = [
   {
+    q: "How do I install it?",
+    a: "Run npm install -g @diet-code/cli, cd into your project, then dietcode init cursor (or agents, windsurf, cline). Claude Code users install via the plugin marketplace instead. See npmjs.com/package/@diet-code/cli.",
+  },
+  {
     q: "Does Diet Code see my code or prompts?",
     a: "No. Diet Code is a rule/instruction file your AI agent reads locally. We never see, log, or store your source code, prompts, or conversations.",
   },

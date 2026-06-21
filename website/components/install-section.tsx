@@ -5,7 +5,20 @@ import { motion } from "framer-motion"
 
 const ease = [0.22, 1, 0.36, 1] as const
 
+const NPM_URL = "https://www.npmjs.com/package/@diet-code/cli"
+const GITHUB_URL = "https://github.com/kendrekaran/dietcode"
+
 const HOSTS = [
+  {
+    id: "cli",
+    label: "npm CLI",
+    lines: [
+      "npm install -g @diet-code/cli",
+      "cd my-project",
+      "dietcode init cursor    # or agents, windsurf, cline",
+      "dietcode init claude    # prints Claude plugin steps",
+    ],
+  },
   {
     id: "claude",
     label: "Claude Code",
@@ -14,26 +27,37 @@ const HOSTS = [
   {
     id: "cursor",
     label: "Cursor",
-    lines: ["dietcode init cursor", "# or copy from github.com/kendrekaran/dietcode"],
+    lines: [
+      "npm install -g @diet-code/cli",
+      "dietcode init cursor",
+      `# or copy from ${GITHUB_URL.replace("https://", "")}`,
+    ],
   },
   {
     id: "codex",
     label: "Codex",
-    lines: ["# ships .codex-plugin/plugin.json + hooks", "@dietcode, @dietcode-review, @dietcode-help"],
+    lines: [
+      `# clone ${GITHUB_URL.replace("https://", "")}`,
+      "# add .codex-plugin/ as a plugin",
+      "@dietcode, @dietcode-review, @dietcode-help",
+    ],
   },
   {
     id: "copilot",
     label: "Copilot CLI",
-    lines: ["# point Copilot at this repo's .github/plugin/", "# commands, skills, and hooks/copilot-hooks.json"],
+    lines: [
+      `# clone ${GITHUB_URL.replace("https://", "")}`,
+      "# point Copilot at .github/plugin/",
+    ],
   },
   {
     id: "generic",
     label: "Windsurf / Cline / Kiro",
     lines: [
-      "Windsurf → .windsurf/rules/dietcode.md",
-      "Cline → .clinerules/dietcode.md",
-      "Kiro → .kiro/steering/dietcode.md",
-      "Any AGENTS.md-aware agent → AGENTS.md",
+      "npm install -g @diet-code/cli",
+      "dietcode init windsurf",
+      "dietcode init cline",
+      "dietcode init agents",
     ],
   },
 ]
@@ -68,7 +92,11 @@ export function InstallSection() {
           Install for your agent
         </h2>
         <p className="text-xs lg:text-sm font-mono text-muted-foreground">
-          One ruleset, every host. Pick yours.
+          Published on npm as{" "}
+          <a href={NPM_URL} className="underline underline-offset-2 hover:text-foreground">
+            @diet-code/cli
+          </a>
+          . One ruleset, every host.
         </p>
       </motion.div>
 
@@ -103,11 +131,18 @@ export function InstallSection() {
             ))}
           </div>
         </div>
-        <div className="px-5 py-3 border-t-2 border-foreground">
+        <div className="px-5 py-3 border-t-2 border-foreground flex flex-wrap gap-x-4 gap-y-1">
           <p className="text-[11px] font-mono text-muted-foreground">
-            Prefer one command for everything?{" "}
-            <code className="px-1 border border-border">npm install -g @diet-code/cli</code> then{" "}
-            <code className="px-1 border border-border">dietcode init &lt;host&gt;</code>.
+            npm:{" "}
+            <a href={NPM_URL} className="underline underline-offset-2 hover:text-foreground">
+              @diet-code/cli
+            </a>
+          </p>
+          <p className="text-[11px] font-mono text-muted-foreground">
+            GitHub:{" "}
+            <a href={GITHUB_URL} className="underline underline-offset-2 hover:text-foreground">
+              kendrekaran/dietcode
+            </a>
           </p>
         </div>
       </motion.div>

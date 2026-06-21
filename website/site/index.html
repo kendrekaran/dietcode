@@ -144,30 +144,34 @@
 <section id="install">
   <div class="wrap">
     <h2>Install for your agent</h2>
-    <p class="sub">One ruleset, every host. Pick yours.</p>
+    <p class="sub">Published on npm as <a href="https://www.npmjs.com/package/@diet-code/cli">@diet-code/cli</a>. One ruleset, every host.</p>
     <div class="tabs" role="tablist">
-      <button class="active" data-tab2="claude">Claude Code</button>
+      <button class="active" data-tab2="cli">npm CLI</button>
+      <button data-tab2="claude">Claude Code</button>
       <button data-tab2="cursor">Cursor</button>
       <button data-tab2="codex">Codex</button>
       <button data-tab2="copilot">Copilot CLI</button>
       <button data-tab2="generic">Windsurf / Cline / Kiro</button>
     </div>
-    <div class="tabpane active" data-pane2="claude">
+    <div class="tabpane active" data-pane2="cli">
+      <div class="codebox">npm install -g @diet-code/cli<br>cd my-project<br>dietcode init cursor&nbsp;&nbsp;&nbsp;&nbsp;# or agents, windsurf, cline<br>dietcode init claude&nbsp;&nbsp;&nbsp;&nbsp;# prints Claude plugin steps</div>
+    </div>
+    <div class="tabpane" data-pane2="claude">
       <div class="codebox">/plugin marketplace add kendrekaran/dietcode<br>/plugin install dietcode</div>
     </div>
     <div class="tabpane" data-pane2="cursor">
-      <div class="codebox">dietcode init cursor<br><span class="cm"># or copy .cursor/rules/dietcode.mdc into your project</span></div>
+      <div class="codebox">npm install -g @diet-code/cli<br>dietcode init cursor<br><span class="cm"># or copy from github.com/kendrekaran/dietcode</span></div>
     </div>
     <div class="tabpane" data-pane2="codex">
-      <div class="codebox"><span class="cm"># ships .codex-plugin/plugin.json + hooks</span><br>@dietcode, @dietcode-review, @dietcode-help</div>
+      <div class="codebox"><span class="cm"># clone github.com/kendrekaran/dietcode</span><br><span class="cm"># add .codex-plugin/ as a plugin</span><br>@dietcode, @dietcode-review, @dietcode-help</div>
     </div>
     <div class="tabpane" data-pane2="copilot">
-      <div class="codebox"><span class="cm"># point Copilot at this repo's .github/plugin/</span><br><span class="cm"># commands, skills, and hooks/copilot-hooks.json</span></div>
+      <div class="codebox"><span class="cm"># clone github.com/kendrekaran/dietcode</span><br><span class="cm"># point Copilot at .github/plugin/</span></div>
     </div>
     <div class="tabpane" data-pane2="generic">
-      <div class="codebox">Windsurf → .windsurf/rules/dietcode.md<br>Cline → .clinerules/dietcode.md<br>Kiro → .kiro/steering/dietcode.md<br>Any AGENTS.md-aware agent → AGENTS.md</div>
+      <div class="codebox">npm install -g @diet-code/cli<br>dietcode init windsurf<br>dietcode init cline<br>dietcode init agents</div>
     </div>
-    <p class="sub" style="margin-top:18px;font-size:0.85rem;">Prefer one command for everything? <code class="inline">npm install -g @diet-code/cli</code> then <code class="inline">dietcode init &lt;host&gt;</code>.</p>
+    <p class="sub" style="margin-top:18px;font-size:0.85rem;">npm: <a href="https://www.npmjs.com/package/@diet-code/cli">@diet-code/cli</a> · GitHub: <a href="https://github.com/kendrekaran/dietcode">kendrekaran/dietcode</a></p>
   </div>
 </section>
 
